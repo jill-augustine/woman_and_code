@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "waac"
+version = "0.0.1"
+description = "Meetup talk for Women&&Code - Python"
+authors = [
+    {name = "Jillian Augustine"},
+]
+readme = "README.md"
+requires-python = ">=3.10.0"
+dynamic = ["dependencies"]
+
+
+[tool.setuptools.dynamic]
+dependencies = {file = "requirements.txt"}

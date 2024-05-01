@@ -1,0 +1,10 @@
+black
+flake8
+isort
+loguru
+numpy
+pandas
+pre-commit
+# pytest
+scikit-learn
+setuptools>=61.0.0

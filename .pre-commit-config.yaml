@@ -1,0 +1,54 @@
+default_stages: [pre-commit]
+default_install_hook_types: [pre-commit, commit-msg]
+fail_fast: false
+minimum_pre_commit_version: 2.18.0
+default_language_version:
+  python: python3.10
+
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.5.0
+  hooks:
+    # all pre-commit hooks
+  - id: check-added-large-files
+  - id: check-case-conflict
+  - id: check-json
+  - id: check-toml
+  - id: check-yaml
+  - id: detect-private-key
+  - id: end-of-file-fixer
+  - id: mixed-line-ending
+  - id: name-tests-test
+    # - id: no-commit-to-branch
+  - id: requirements-txt-fixer
+  - id: trailing-whitespace
+
+# black
+- repo: https://github.com/psf/black
+  rev: 24.4.2
+  hooks:
+  - id: black
+    language_version: python3.10
+
+# isort
+- repo: https://github.com/PyCQA/isort
+  rev: 5.13.2
+  hooks:
+  - id: isort
+    args: ['--profile', 'black']
+
+# flake8
+- repo: https://github.com/PyCQA/flake8
+  rev: 7.0.0
+  hooks:
+  - id: flake8
+    additional_dependencies: ['flake8-bugbear', 'flake8-comprehensions', 'flake8-docstrings', 'flake8-import-order', 'flake8-quotes', 'flake8-typing-imports']
+
+# conventional-commit
+- repo: https://github.com/compilerla/conventional-pre-commit
+  rev: v3.2.0
+  hooks:
+  - id: conventional-pre-commit
+    args: []
