@@ -1,0 +1,97 @@
+{
+    "name.basics.tsv.gz": {
+        "shape": [
+            13463556,
+            6
+        ],
+        "dtypes": {
+            "nconst": "object",
+            "primaryName": "object",
+            "birthYear": "object",
+            "deathYear": "object",
+            "primaryProfession": "object",
+            "knownForTitles": "object"
+        }
+    },
+    "title.akas.tsv.gz": {
+        "shape": [
+            48163027,
+            8
+        ],
+        "dtypes": {
+            "titleId": "object",
+            "ordering": "int64",
+            "title": "object",
+            "region": "object",
+            "language": "object",
+            "types": "object",
+            "attributes": "object",
+            "isOriginalTitle": "int64"
+        }
+    },
+    "title.basics.tsv.gz": {
+        "shape": [
+            10742876,
+            9
+        ],
+        "dtypes": {
+            "tconst": "object",
+            "titleType": "object",
+            "primaryTitle": "object",
+            "originalTitle": "object",
+            "isAdult": "int64",
+            "startYear": "object",
+            "endYear": "object",
+            "runtimeMinutes": "object",
+            "genres": "object"
+        }
+    },
+    "title.crew.tsv.gz": {
+        "shape": [
+            10106067,
+            3
+        ],
+        "dtypes": {
+            "tconst": "object",
+            "directors": "object",
+            "writers": "object"
+        }
+    },
+    "title.episode.tsv.gz": {
+        "shape": [
+            8223691,
+            4
+        ],
+        "dtypes": {
+            "tconst": "object",
+            "parentTconst": "object",
+            "seasonNumber": "object",
+            "episodeNumber": "object"
+        }
+    },
+    "title.principals.tsv.gz": {
+        "shape": [
+            85552772,
+            6
+        ],
+        "dtypes": {
+            "tconst": "object",
+            "ordering": "int64",
+            "nconst": "object",
+            "category": "object",
+            "job": "object",
+            "characters": "object"
+        }
+    },
+    "title.ratings.tsv.gz": {
+        "shape": [
+            1433528,
+            3
+        ],
+        "dtypes": {
+            "tconst": "object",
+            "averageRating": "float64",
+            "numVotes": "int64"
+        }
+    }
+}

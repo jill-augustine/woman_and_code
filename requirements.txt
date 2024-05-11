@@ -2,6 +2,7 @@ black
 flake8
 isort
 loguru
+notebook
 numpy
 pandas
 pre-commit
