@@ -30,11 +30,11 @@ DATA_DIR = config.DATA_DIR
 DOWNLOAD_DIR = DATA_DIR / "download"
 
 parser = argparse.ArgumentParser()
-# parser.add_argument(
-#     "--local",
-#     action="store_true",
-#     help="If set, use local data."
-# )
+parser.add_argument(
+    "--local",
+    action="store_true",
+    help="If set, use local data."
+)
 parser.add_argument(
     "--remote",
     action="store_true",
@@ -60,7 +60,7 @@ logger.info(f"Running with args: {args}")
 # Set more constants
 IMDB_REMOTE_URI_PREFIX = "https://datasets.imdbws.com/"
 IMDB_LOCAL_URI_PREFIX = (
-    "/Users/jillianaugustine/Documents/GitHub/women_and_code/data/imdb/20240503_"
+    str(DATA_DIR / "imdb") + "/"
 )
 
 rng = np.random.default_rng(seed=16042024)
@@ -158,18 +158,18 @@ for k in list(imdb_data["title.basics.tsv.gz"].keys()):
         _ = imdb_data["title.basics.tsv.gz"].pop(k)
 
 
-def iterable_to_map():
-    for year in common_years:
-        # pass only the relevant aka data (it is not split by year)
-        tconsts = imdb_data["title.basics.tsv.gz"][year]["tconst"]
-        aka_data = imdb_data["title.akas.tsv.gz"]
-        aka_data = aka_data[aka_data["titleId"].isin(tconsts)]
-        yield (
-            movie_titles_by_year[year],
-            imdb_data["title.basics.tsv.gz"][year],
-            aka_data,
-            1,  # verbosity level
-        )
+# def iterable_to_map():
+#     for year in common_years:
+#         # pass only the relevant aka data (it is not split by year)
+#         tconsts = imdb_data["title.basics.tsv.gz"][year]["tconst"]
+#         aka_data = imdb_data["title.akas.tsv.gz"]
+#         aka_data = aka_data[aka_data["titleId"].isin(tconsts)]
+#         yield (
+#             movie_titles_by_year[year],
+#             imdb_data["title.basics.tsv.gz"][year],
+#             aka_data,
+#             1,  # verbosity level
+#         )
 
 
 # # set spawn context

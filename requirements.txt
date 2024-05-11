@@ -9,3 +9,4 @@ pre-commit
 # pytest
 scikit-learn
 setuptools>=61.0.0
+plotly
