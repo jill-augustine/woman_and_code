@@ -10,3 +10,4 @@ pre-commit
 scikit-learn
 setuptools>=61.0.0
 plotly
+torch
